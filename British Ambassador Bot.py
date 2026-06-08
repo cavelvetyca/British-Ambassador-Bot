@@ -2,6 +2,8 @@ import os
 import random
 import discord
 from discord.ext import commands
+from flask import Flask
+from threading import Thread
 
 TOKEN = os.getenv("TOKEN")
 
