@@ -145,5 +145,17 @@ async def commands_list(interaction: discord.Interaction):
         "/dentist, /fishandchips, /beans, /museum, /train, /monarchy,\n"
         "/roadworks, /britishmoment, /why, /commands"
     )
+    
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "GDBot is running."
+
+def run_web():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
+Thread(target=run_web).start()
 
 bot.run(TOKEN)
